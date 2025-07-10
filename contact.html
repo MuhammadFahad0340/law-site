@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1" />
+  <title>Lawyers | Contact</title>
+
+  <!-- Fonts and Icons -->
+  <link href="fonts/font-awesome.min.css" rel="stylesheet" />
+  <link href="fonts/novecento-font/novecento-font.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: 'Novecento', sans-serif, 'Segoe UI Emoji', 'Noto Color Emoji', 'Apple Color Emoji', sans-serif;
+    }
+    .themed-box {
+      background-color: #1a1a1a;
+      border-left: 5px solid #c8aa6e;
+      padding: 30px;
+      margin: 30px auto;
+      box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      max-width: 900px;
+    }
+    .themed-box .section-heading {
+      font-size: 24px;
+      color: #fff;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+    .themed-box p,
+    .themed-box ul li {
+      font-size: 15px;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+    .themed-box a {
+      color: #c8aa6e;
+      text-decoration: underline;
+    }
+    .contact-form label {
+      color: #ccc;
+    }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+      background-color: #1f1f1f;
+      color: #fff;
+      border: 1px solid #333;
+      padding: 10px;
+      padding-left: 35px;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    .contact-form input[type="submit"] {
+      background-color: #c8aa6e;
+      color: #111;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .contact-form input[type="submit"]:hover {
+      background-color: #a88d50;
+    }
+    .entry-title {
+      color: #fff;
+    }
+	footer {
+      background-color: #1c1c1c;
+      color: #c8aa6e;
+      padding: 30px 0;
+      text-align: center;
+      border-top: 3px solid #c8aa6e;
+    }
+    footer a {
+      color: #c8aa6e;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="site-content">
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container">
+        <a href="index.html" id="branding">
+          <img src="dummy/logo ok.png" alt="Company Name" class="logo" />
+          <div class="branding-copy">
+            <h1 class="site-title">M&H Advocates & Corporate Consultants</h1>
+            <small class="site-description">Delivering expert legal services across diverse sectors</small>
+          </div>
+        </a>
+        <nav class="main-navigation">
+          <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+          <ul class="menu">
+            <li class="menu-item"><a href="index.html">Home</a></li>
+            <li class="menu-item"><a href="about.html">About Us</a></li>
+            <li class="menu-item"><a href="experience.html">Experience</a></li>
+            <li class="menu-item"><a href="service.html">Service</a></li>
+            <li class="menu-item current-menu-item"><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <div class="themed-box">
+          <h2 class="section-heading">Let’s Connect</h2>
+          <p>
+            You can contact us using the form below. Whether it's legal advice, questions about our services, or booking a meeting—our team is here to support you.
+          </p>
+          <ul>
+            <li>📧 Submit your query through the contact form.</li>
+            <li>📞 Expect a response within 24 hours.</li>
+          </ul>
+        </div>
+
+        <!-- Contact Form Section -->
+        <form action="https://formspree.io/f/myzjoeep" method="POST" class="contact-form" id="contactForm">
+			    <h2>Contact Us</h2>
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" name="name" id="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" name="email" id="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="website">Website</label>
+            <input type="text" name="website" id="website" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea name="message" id="message" required></textarea>
+          </div>
+
+          <div class="text-right">
+            <input type="submit" value="Send Message" />
+            <p id="formStatus" style="margin-top: 10px; color: green;"></p>
+          </div>
+        </form>
+
+        <!-- Calendly Section -->
+        <section class="fullwidth-block content" style="margin-top: 40px;">
+          <h2 class="entry-title">Book a Meeting with Us</h2>
+          <p>Schedule a free consultation via our online calendar.</p>
+          <div class="calendly-inline-widget" data-url="https://calendly.com/fahadking79687/new-meeting" style="min-width:320px; height:800px;"></div>
+        </section>
+      </div>
+    </main>
+
+    <div class="main-wrap">
+				<div class="footer-wrap">
+					<div class="footer-wrap-1">
+						<div class="footer-section">
+							<h1>Our Firm</h1>
+							<a href="about.html">About Us</a>
+							<a href="service.html">Our Services</a>
+							<a href="service.html">Practice Areas</a>
+							<a href="experience.html">Careers</a>
+						</div>
+						<div class="footer-section">
+							<h1>Legal Resources</h1>
+							<a href="#">Articles</a>
+							<a href="#">FAQs</a>
+							<a href="#">Case Studies</a>
+							<a href="service.html">Law Insights</a>
+						</div>
+						<div class="footer-section">
+							<h1>Support</h1>
+							<a href="contact.html">Contact Us</a>
+							<a href="contact.html">Schedule Consultation</a>
+							<a href="login.html">Client Login</a>
+						</div>
+						<!-- <div class="footer-section newsletter" id="newsletterSection">
+							<h1>Stay Informed</h1>
+							<p>Subscribe to receive updates on legal news, tips, and case results.</p>
+							<form id="subscribeForm">
+								<input type="email" name="email" id="email" placeholder="Enter your email address" required>
+								<button type="submit" class="btn">Subscribe</button>
+							</form>
+							<p id="subscribeMessage" style="margin-top: 10px; color: #c8aa6e;"></p>
+						</div> -->
+					</div>
+
+					<div class="footer-wrap-2">
+						<div class="line"></div>
+							<div class="social-link">
+								<a href="https://www.facebook.com/mandhadvocates92?mibextid=qi2Omg&rdid=X3zaFRFwao2SwCWc&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1QuDcnANMe%2F%3Fmibextid%3Dqi2Omg#" class="social-icon"><i class="fa fa-facebook"></i></a>
+								<a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+								<a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+								<a href="#" class="social-icon"><i class="fa fa-instagram"></i></a>
+								<a href="#" class="social-icon"><i class="fa fa-youtube"></i></a>
+								<a href="#" class="social-icon"><i class="fa fa-whatsapp"></i></a>
+							</div>
+						</div>
+					</div>
+
+				<div class="footer-bottom">
+					<div class="first-box">
+						<a href="termsOfService.html">Terms of Service</a>
+						<a href="privacypolicy.html">Privacy Policy</a>
+						<a href="disclaimer.html">Disclaimer</a>
+					</div>
+					<div class="last-box">
+						<a href="#">&copy; 2025 Justice & Partners Law Firm. All Rights Reserved.</a>
+					</div>
+				</div>
+			</div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/app.js"></script>
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script>
+    const isLoggedIn = true;
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const newsletterSection = document.getElementById("newsletterSection");
+      const subscribeForm = document.getElementById("subscribeForm");
+      const message = document.getElementById("subscribeMessage");
+
+      if (isLoggedIn) {
+        newsletterSection.style.display = "none";
+      }
+
+      subscribeForm?.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const email = document.getElementById("email").value;
+        message.textContent = "Subscribed successfully! Thank you.";
+      });
+    });
+  </script>
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const formStatus = document.getElementById("formStatus");
+
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      })
+        .then(response => {
+          if (response.ok) {
+            formStatus.textContent = "Thank you! Your message has been sent.";
+            form.reset();
+          } else {
+            formStatus.textContent = "Oops! Something went wrong.";
+          }
+        })
+        .catch(error => {
+          formStatus.textContent = "There was a problem submitting the form.";
+        });
+    });
+  </script>
+  <script>
+			const currentPath = window.location.pathname.split("/").pop();
+			document.querySelectorAll(".main-navigation .menu-item a").forEach(link => {
+				if (link.getAttribute("href") === currentPath || (currentPath === "" && link.getAttribute("href") === "index.html")) {
+					link.parentElement.classList.add("current-menu-item");
+				} else {
+					link.parentElement.classList.remove("current-menu-item");
+				}
+			});
+		</script>
+    <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCDcHEvIB3pbgrQNZZJIKAfLzJ2mgDoBTU",
+      authDomain: "lawfirmauth-16bd4.firebaseapp.com",
+      projectId: "lawfirmauth-16bd4",
+      storageBucket: "lawfirmauth-16bd4.firebasestorage.app",
+      messagingSenderId: "288192077960",
+      appId: "1:288192077960:web:4bbe1be11366af56117f3d",
+      measurementId: "G-7484K80JFZ"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Redirect if not logged in
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        sessionStorage.setItem("redirectAfterLogin", window.location.href);
+        window.location.href = "/login.html";
+      }
+    });
+  </script>
+</body>
+</html>

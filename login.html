@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - M&H Advocates</title>
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body>
+    <div class="auth-container">
+      <h2>Login to Your Account</h2>
+      <form onsubmit="handleLogin(event)">
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <button type="submit">Login</button>
+      </form>
+      <p class="switch-link">
+        Don't have an account? <a href="signup.html">Sign up here</a>
+      </p>
+      <div class="google-login-container">
+        <p class="or-text">OR</p>
+        <button
+          class="google-btn"
+          id="google-signin-btn"
+          onclick="handleGoogleLogin()"
+        >
+          <img
+            src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+            alt="Google Logo"
+          />
+          <span>Sign in with Google</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Snackbar -->
+    <div id="snackbar">Success!</div>
+
+    <!-- Spinner -->
+    <div id="loader" style="display: none"></div>
+
+    <style>
+      #snackbar {
+        visibility: hidden;
+        min-width: 250px;
+        background-color: #28a745;
+        color: white;
+        text-align: center;
+        padding: 12px;
+        position: fixed;
+        z-index: 999;
+        left: 50%;
+        bottom: 30px;
+        transform: translateX(-50%);
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      #snackbar.show {
+        visibility: visible;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      }
+
+      @keyframes fadein {
+        from {
+          bottom: 0;
+          opacity: 0;
+        }
+        to {
+          bottom: 30px;
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeout {
+        from {
+          bottom: 30px;
+          opacity: 1;
+        }
+        to {
+          bottom: 0;
+          opacity: 0;
+        }
+      }
+
+      #loader {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        z-index: 1000;
+        transform: translate(-50%, -50%);
+        border: 6px solid #f3f3f3;
+        border-top: 6px solid #333;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 0.8s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+    </style>
+
+    <script type="module">
+  // Snackbar utility
+  function showSnackbar(message, callbackAfter = null) {
+    const sb = document.getElementById("snackbar");
+    if (!sb) return;
+
+    sb.textContent = message;
+    sb.className = "show";
+
+    setTimeout(() => {
+      sb.className = sb.className.replace("show", "");
+      if (callbackAfter) callbackAfter();
+    }, 3000);
+  }
+
+  // Loader utility
+  function showLoader(show) {
+    const loader = document.getElementById("loader");
+    if (loader) loader.style.display = show ? "block" : "none";
+  }
+
+  // Firebase SDK imports
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+  import {
+    getAuth,
+    signInWithEmailAndPassword,
+    GoogleAuthProvider,
+    signInWithPopup,
+    setPersistence,
+    browserSessionPersistence,
+    signOut
+  } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
+  // Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyCDcHEvIB3pbgrQNZZJIKAfLzJ2mgDoBTU",
+    authDomain: "lawfirmauth-16bd4.firebaseapp.com",
+    projectId: "lawfirmauth-16bd4",
+    storageBucket: "lawfirmauth-16bd4.appspot.com",
+    messagingSenderId: "288192077960",
+    appId: "1:288192077960:web:4bbe1be11366af56117f3d",
+    measurementId: "G-7484K80JFZ"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  // Email/password login
+  window.handleLogin = async function (event) {
+    event.preventDefault();
+    showLoader(true);
+
+    const email = event.target.email.value.trim();
+    const password = event.target.password.value.trim();
+
+    try {
+      await setPersistence(auth, browserSessionPersistence);
+
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      // Check email verification
+      if (!user.emailVerified) {
+        await signOut(auth); // force logout
+        showLoader(false);
+        showSnackbar("Please verify your email before logging in.");
+        return;
+      }
+
+      const name = localStorage.getItem("userName") || "Back!";
+      showLoader(false);
+      showSnackbar(`Welcome ${name}`, () => {
+        const redirectTo = sessionStorage.getItem("redirectAfterLogin") || "index.html";
+        sessionStorage.removeItem("redirectAfterLogin");
+        window.location.href = redirectTo;
+      });
+    } catch (error) {
+      showLoader(false);
+      let message = "Login failed.";
+      switch (error.code) {
+        case "auth/invalid-email":
+          message = "Invalid email format.";
+          break;
+        case "auth/user-disabled":
+          message = "Your account has been disabled.";
+          break;
+        case "auth/user-not-found":
+        case "auth/wrong-password":
+          message = "Incorrect email or password.";
+          break;
+        case "auth/too-many-requests":
+          message = "Too many attempts. Please try again later.";
+          break;
+        default:
+          message = "Error: " + error.message;
+      }
+      showSnackbar(message);
+    }
+  };
+
+  // Google Sign-In
+  window.handleGoogleLogin = async function () {
+    showLoader(true);
+    try {
+      await setPersistence(auth, browserSessionPersistence);
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+
+      localStorage.setItem("userName", user.displayName || "User");
+
+      showLoader(false);
+      showSnackbar(`Welcome, ${user.displayName || "User"}!`, () => {
+        const redirectTo = sessionStorage.getItem("redirectAfterLogin") || "index.html";
+        sessionStorage.removeItem("redirectAfterLogin");
+        window.location.href = redirectTo;
+      });
+    } catch (error) {
+      showLoader(false);
+      console.error("Google Sign-In Error:", error);
+      showSnackbar("Google Sign-In failed. Please try again.");
+    }
+  };
+</script>
+
+  </body>
+</html>

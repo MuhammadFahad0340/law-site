@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contract Law Application | M&H Advocates</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="modern-checkbox-style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<body>
+  <div id="site-content">
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container">
+        <a href="../index.html" id="branding">
+          <img src="../dummy/logo ok.png" alt="Company Logo" class="logo" />
+          <div class="branding-copy">
+            <h1 class="site-title">M&H Advocates & Corporate Consultants</h1>
+            <small class="site-description">Trusted legal counsel for your business contracts</small>
+          </div>
+        </a>
+        <nav class="main-navigation">
+          <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+          <ul class="menu">
+            <li class="menu-item"><a href="../index.html">Home</a></li>
+            <li class="menu-item"><a href="../about.html">About Us</a></li>
+            <li class="menu-item"><a href="../experience.html">Experience</a></li>
+            <li class="menu-item"><a href="../service.html">Service</a></li>
+            <li class="menu-item"><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="fullwidth-block content service-form">
+        <div class="container">
+          <!-- Title -->
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="entry-title">Contract Law Services</h1>
+              <p class="lead">Comprehensive legal support for drafting, reviewing, and enforcing your contracts</p>
+            </div>
+          </div>
+
+          <!-- Responsibilities -->
+          <div class="row" style="margin-top: 40px;">
+            <div class="col-md-12">
+              <h2>Our Key Responsibilities in Contract Law</h2>
+              <div class="row" style="margin-top: 30px;">
+                <div class="col-md-6">
+                  <div class="responsibility-item">
+                    <h4><i class="fa fa-file-text-o" style="color:#c8aa6e; margin-right:10px;"></i>Contract Drafting</h4>
+                    <p>We draft customized contracts to suit your business needs while minimizing legal risk.</p>
+                  </div>
+                  <div class="responsibility-item">
+                    <h4><i class="fa fa-check-square" style="color:#c8aa6e; margin-right:10px;"></i>Agreement Review</h4>
+                    <p>We review contracts thoroughly to ensure your interests are protected.</p>
+                  </div>
+                  <div class="responsibility-item">
+                    <h4><i class="fa fa-gavel" style="color:#c8aa6e; margin-right:10px;"></i>Dispute Resolution</h4>
+                    <p>We help resolve contract disputes through negotiation, mediation, or litigation.</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="responsibility-item">
+                    <h4><i class="fa fa-legal" style="color:#c8aa6e; margin-right:10px;"></i>Contract Enforcement</h4>
+                    <p>We assist in enforcing contractual obligations in court when necessary.</p>
+                  </div>
+                  <div class="responsibility-item">
+                    <h4><i class="fa fa-shield" style="color:#c8aa6e; margin-right:10px;"></i>Risk Management</h4>
+                    <p>We identify hidden risks and liabilities in agreements to protect your interests.</p>
+                  </div>
+                  <div class="responsibility-item">
+                    <h4><i class="fa fa-user-secret" style="color:#c8aa6e; margin-right:10px;"></i>Confidentiality Agreements</h4>
+                    <p>We prepare NDAs and confidentiality clauses to safeguard sensitive business information.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Section -->
+          <div class="row" style="margin-top: 50px;">
+            <div class="col-md-12">
+              <h2>Contract Law Application Form</h2>
+              <p>Please complete the form below to request contract-related legal assistance.</p>
+
+              <form action="#" method="POST" style="margin-top: 30px;">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="firstName">First Name *</label>
+                      <input type="text" id="firstName" name="firstName" class="form-control" required />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="lastName">Last Name *</label>
+                      <input type="text" id="lastName" name="lastName" class="form-control" required />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="email">Email Address *</label>
+                      <input type="email" id="email" name="email" class="form-control" required />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="phone">Phone Number *</label>
+                      <input type="tel" id="phone" name="phone" class="form-control" required />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="contractType">Type of Contract *</label>
+                  <select id="contractType" name="contractType" class="form-control" required>
+                    <option value="">Select Contract Type</option>
+                    <option value="service">Service Agreement</option>
+                    <option value="employment">Employment Contract</option>
+                    <option value="nda">Non-Disclosure Agreement (NDA)</option>
+                    <option value="partnership">Partnership Agreement</option>
+                    <option value="lease">Lease Agreement</option>
+                    <option value="sale">Sale/Purchase Agreement</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div class="checkbox-group">
+                  <label><strong>Contract Services Needed *</strong></label>
+                  <label><input type="checkbox" name="servicesNeeded[]" value="drafting" /> Drafting a new contract</label>
+                  <label><input type="checkbox" name="servicesNeeded[]" value="review" /> Reviewing an existing contract</label>
+                  <label><input type="checkbox" name="servicesNeeded[]" value="negotiation" /> Negotiating contract terms</label>
+                  <label><input type="checkbox" name="servicesNeeded[]" value="breach" /> Breach of contract resolution</label>
+                  <label><input type="checkbox" name="servicesNeeded[]" value="nda" /> NDA/confidentiality drafting</label>
+                  <label><input type="checkbox" name="servicesNeeded[]" value="enforcement" /> Contract enforcement</label>
+                </div>
+
+                <div class="form-group">
+                  <label for="contractDetails">Contract Details *</label>
+                  <textarea id="contractDetails" name="contractDetails" class="form-control" rows="5" required placeholder="Describe your situation, goals, or concerns regarding the contract..."></textarea>
+                </div>
+
+                <div class="form-disclaimer">
+                  <label>
+                    <input type="checkbox" required />
+                    I understand that submitting this form does not create an attorney-client relationship. *
+                  </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="background-color:#c8aa6e; border:none; padding: 12px 30px;">Submit Application</button>
+                <a href="../index.html" class="btn btn-secondary" style="margin-left: 15px;">Back to Home</a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-wrap">
+              <div class="footer-wrap">
+                <div class="footer-wrap-1">
+                  <div class="footer-section">
+                    <h1>Our Firm</h1>
+                    <a href="about.html">About Us</a>
+                    <a href="service.html">Our Services</a>
+                    <a href="service.html">Practice Areas</a>
+                    <a href="experience.html">Careers</a>
+                  </div>
+                  <div class="footer-section">
+                    <h1>Legal Resources</h1>
+                    <a href="#">Articles</a>
+                    <a href="#">FAQs</a>
+                    <a href="#">Case Studies</a>
+                    <a href="service.html">Law Insights</a>
+                  </div>
+                  <div class="footer-section">
+                    <h1>Support</h1>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="contact.html">Schedule Consultation</a>
+                    <a href="login.html">Client Login</a>
+                  </div>
+                </div>
+
+                <div class="footer-wrap-2">
+                  <div class="line"></div>
+                  <div class="social-link">
+                    								<a href="https://www.facebook.com/mandhadvocates92?mibextid=qi2Omg&rdid=X3zaFRFwao2SwCWc&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1QuDcnANMe%2F%3Fmibextid%3Dqi2Omg#" class="social-icon"><i class="fa fa-facebook"></i></a>
+
+                    <a href="#" class="social-icon"
+                      ><i class="fa fa-twitter"></i
+                    ></a>
+                    <a href="#" class="social-icon"
+                      ><i class="fa fa-linkedin"></i
+                    ></a>
+                    <a href="#" class="social-icon"
+                      ><i class="fa fa-instagram"></i
+                    ></a>
+                    <a href="#" class="social-icon"
+                      ><i class="fa fa-youtube"></i
+                    ></a>
+                    <a href="#" class="social-icon"
+                      ><i class="fa fa-whatsapp"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="footer-bottom">
+                <div class="first-box">
+                  <a href="../termsOfService.html">Terms of Service</a>
+                  <a href="../privacypolicy.html">Privacy Policy</a>
+                  <a href="../disclaimer.html">Disclaimer</a>
+                </div>
+                <div class="last-box">
+                  <a href="#"
+                    >&copy; 2025 Justice & Partners Law Firm. All Rights
+                    Reserved.</a
+                  >
+                </div>
+              </div>
+            </div>
+    </main>
+    
+  </div>
+
+  <script>
+    // Highlight current menu item
+    const currentPath = window.location.pathname.split("/").pop();
+    document.querySelectorAll(".main-navigation .menu-item a").forEach(link => {
+      if (link.getAttribute("href") === currentPath || (currentPath === "" && link.getAttribute("href") === "index.html")) {
+        link.parentElement.classList.add("current-menu-item");
+      }
+    });
+  </script>
+</body>
+</html>

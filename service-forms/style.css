@@ -1,0 +1,349 @@
+/* ===== Global Styling ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ===== Form Container ===== */
+.form-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(200, 170, 110, 0.2);
+}
+
+/* ===== Headings ===== */
+h1, h2, h3, h4, h5 {
+  color: #c8aa6e;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.form-container p {
+  font-size: 15px;
+  color: #cccccc;
+  margin-bottom: 25px;
+}
+
+/* ===== Layout ===== */
+.service-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* ===== Inputs & Selects ===== */
+input.form-control,
+textarea.form-control,
+select.form-control {
+  padding: 10px;
+  border: 1px solid #c8aa6e;
+  border-radius: 4px;
+  background-color: #1c1c1c;
+  color: #db940e;
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input.form-control:focus,
+textarea.form-control:focus,
+select.form-control:focus {
+  outline: none;
+  border-color: #ac8074;
+  box-shadow: 0 0 5px rgba(200, 170, 110, 0.4);
+}
+
+/* ===== Labels ===== */
+label {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+/* ===== Traditional Square Checkboxes ===== */
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 25px;
+  margin-top: 5px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #d68f0b;
+}
+
+.checkbox-item input[type="checkbox"] {
+  /* Reset appearance */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Box style */
+  width: 18px;
+  height: 18px;
+  border: 2px solid #c8aa6e;
+  background-color: #1c1c1c;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox-item input[type="checkbox"]:checked {
+  background-color: #c8aa6e;
+}
+
+.checkbox-item input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 4px;
+  height: 8px;
+  border: solid #121212;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+
+.checkbox-item input[type="checkbox"]:checked::before {
+  opacity: 1;
+}
+
+.checkbox-item label {
+  font-weight: normal;
+  font-size: 14px;
+  color: #bd8113;
+  cursor: pointer;
+  margin: 0;
+}
+
+/* ===== Submit Button ===== */
+.btn-primary {
+  background-color: #c8aa6e;
+  color: #121212;
+  border: none;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #a68858;
+}
+
+.btn-primary:focus {
+  outline: 2px solid #da7706;
+  outline-offset: 2px;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-container {
+    padding: 15px;
+  }
+
+  .checkbox-group {
+    gap: 10px 15px;
+  }
+}
+
+/* ===== Traditional Square Checkboxes ===== */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #c8aa6e;
+  background-color: #1e1e1e;
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #c8aa6e;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 4px;
+  height: 8px;
+  border: solid #121212;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+
+input[type="checkbox"]:checked::before {
+  opacity: 1;
+}
+
+/* ===== Form Section Text Styling Consistent with Theme ===== */
+.form-container h1,
+h1.entry-title {
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.form-container h2,
+h2 {
+  font-size: 22px;
+  color: #f2f2f2;
+  margin-bottom: 12px;
+  margin-top: 40px;
+}
+
+.form-container p,
+p.lead {
+  font-size: 15px;
+  color: #ccc;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* ===== Form Group and Field Styling ===== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+input.form-control,
+textarea.form-control,
+select.form-control {
+  padding: 10px 12px;
+  border: 1px solid #c8aa6e;
+  border-radius: 4px;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-size: 14px;
+}
+
+input.form-control:focus,
+textarea.form-control:focus,
+select.form-control:focus {
+  outline: none;
+  border-color: #ac8074;
+  box-shadow: 0 0 5px rgba(200, 170, 110, 0.4);
+}
+
+/* ===== Labels ===== */
+label {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+/* ===== Submit and Navigation Buttons ===== */
+.btn-primary {
+  background-color: #c8aa6e;
+  color: #121212;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #a68858;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid #c8aa6e;
+  color: #c8aa6e;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #c8aa6e;
+  color: #121212;
+}
+
+/* ===== Checkbox Group Styling Consistent with Theme ===== */
+input[type="checkbox"] {
+  accent-color: #c8aa6e;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.checkbox-item label,
+.checkbox-group label {
+  font-size: 14px;
+  color: #ccc;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+/* ===== Margin and Layout Fixes ===== */
+.row {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+}
+
