@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,maximum-scale=1"
+    />
+
+    <title>Taxation Services Application | M&H Advocates</title>
+
+    <!-- Fonts and CSS -->
+    <link
+      href="../fonts/font-awesome.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="../fonts/novecento-font/novecento-font.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/@supabase/supabase-js"></script>
+  </head>
+
+  <body>
+    <div id="site-content">
+      <!-- Header -->
+      <header class="site-header">
+        <div class="container">
+          <a href="../index.html" id="branding">
+            <img src="../dummy/logo ok.png" alt="Company Logo" class="logo" />
+            <div class="branding-copy">
+              <h1 class="site-title">M&H Advocates & Corporate Consultants</h1>
+              <small class="site-description"
+                >Delivering expert legal services across diverse sectors</small
+              >
+            </div>
+          </a>
+          <nav class="main-navigation">
+            <button type="button" class="menu-toggle">
+              <i class="fa fa-bars"></i>
+            </button>
+            <ul class="menu">
+              <li class="menu-item"><a href="../index.html">Home</a></li>
+              <li class="menu-item"><a href="../about.html">About Us</a></li>
+              <li class="menu-item">
+                <a href="../experience.html">Experience</a>
+              </li>
+              <li class="menu-item"><a href="../service.html">Service</a></li>
+              <li class="menu-item"><a href="../contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <nav class="mobile-navigation"></nav>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <div class="fullwidth-block content service-form">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <h1 class="entry-title">Taxation Services</h1>
+                <p class="lead">
+                  Reliable guidance for personal, corporate, and indirect
+                  taxation matters
+                </p>
+              </div>
+            </div>
+
+            <!-- Responsibilities -->
+            <div class="row" style="margin-top: 40px">
+              <div class="col-md-12">
+                <h2>Our Key Responsibilities in Taxation Law</h2>
+                <div class="row" style="margin-top: 30px">
+                  <div class="col-md-6">
+                    <div
+                      class="responsibility-item"
+                      style="margin-bottom: 25px"
+                    >
+                      <h4>
+                        <i
+                          class="fa fa-file-text"
+                          style="color: #c8aa6e; margin-right: 10px"
+                        ></i
+                        >Tax Compliance & Filing
+                      </h4>
+                      <p>
+                        Ensure timely and accurate tax filings for individuals
+                        and businesses to avoid penalties and audits.
+                      </p>
+                    </div>
+
+                    <div
+                      class="responsibility-item"
+                      style="margin-bottom: 25px"
+                    >
+                      <h4>
+                        <i
+                          class="fa fa-balance-scale"
+                          style="color: #c8aa6e; margin-right: 10px"
+                        ></i
+                        >Dispute Resolution
+                      </h4>
+                      <p>
+                        Represent clients in tax audits, assessments, and
+                        appeals before tax authorities and tribunals.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div
+                      class="responsibility-item"
+                      style="margin-bottom: 25px"
+                    >
+                      <h4>
+                        <i
+                          class="fa fa-lightbulb-o"
+                          style="color: #c8aa6e; margin-right: 10px"
+                        ></i
+                        >Strategic Tax Planning
+                      </h4>
+                      <p>
+                        Offer proactive strategies to optimize tax liability and
+                        structure transactions efficiently.
+                      </p>
+                    </div>
+
+                    <div
+                      class="responsibility-item"
+                      style="margin-bottom: 25px"
+                    >
+                      <h4>
+                        <i
+                          class="fa fa-users"
+                          style="color: #c8aa6e; margin-right: 10px"
+                        ></i
+                        >Client Representation
+                      </h4>
+                      <p>
+                        Act on your behalf in all interactions with federal,
+                        provincial, and local tax authorities.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Application Form -->
+            <div class="row" style="margin-top: 50px">
+              <div class="col-md-12">
+                <h2>Taxation Services Application Form</h2>
+                <p>
+                  Please fill out the form to allow us to assess your
+                  tax-related requirements and offer you the most effective
+                  legal solutions.
+                </p>
+                <form action="#" method="POST" style="margin-top: 30px">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Full Name *</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="name"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label>Email *</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        name="email"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Phone *</label>
+                      <input
+                        type="tel"
+                        class="form-control"
+                        name="phone"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label>Type of Tax Issue *</label>
+                      <select class="form-control" name="taxType" required>
+                        <option value="">Select Type</option>
+                        <option>Income Tax</option>
+                        <option>Corporate Tax</option>
+                        <option>Sales Tax / GST</option>
+                        <option>Property Tax</option>
+                        <option>Tax Refund/Return</option>
+                        <option>Other</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label>Describe Your Tax Matter *</label>
+                      <textarea
+                        class="form-control"
+                        name="details"
+                        rows="5"
+                        required
+                        placeholder="Briefly explain your tax-related concern..."
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label>Do you have any upcoming tax deadlines?</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="deadline"
+                        placeholder="Mention any important dates if known"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row" style="margin-top: 20px">
+                    <div class="col-md-12">
+                      <label
+                        ><input type="checkbox" required /> I agree to the
+                        privacy policy and terms of service *</label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row" style="margin-top: 30px">
+                    <div class="col-md-12">
+                      <button
+                        type="submit"
+                        class="btn btn-primary"
+                        style="background-color: #c8aa6e; border-color: #c8aa6e"
+                      >
+                        Submit Application
+                      </button>
+                      <a
+                        href="../index.html"
+                        class="btn btn-secondary"
+                        style="margin-left: 15px"
+                        >Back to Home</a
+                      >
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Contact Info Section -->
+            <div
+              class="row"
+              style="
+                margin-top: 50px;
+                padding: 30px;
+                background-color: #4b3804;
+                border-radius: 5px;
+              "
+            >
+              <div class="col-md-12">
+                <h3>Need Expert Tax Help?</h3>
+                <p style="margin-top: 10px">
+                  Call us:
+                  <a href="tel:+1234567890" style="color: #c8aa6e"
+                    >(123) 456-7890</a
+                  >
+                  | Email:
+                  <a
+                    href="mailto:taxation@mhadvocates.com"
+                    style="color: #c8aa6e"
+                    >taxation@mhadvocates.com</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <div class="main-wrap">
+        <div class="footer-wrap">
+          <div class="footer-wrap-1">
+            <div class="footer-section">
+              <h1>Our Firm</h1>
+              <a href="about.html">About Us</a>
+              <a href="service.html">Our Services</a>
+              <a href="service.html">Practice Areas</a>
+              <a href="experience.html">Careers</a>
+            </div>
+            <div class="footer-section">
+              <h1>Legal Resources</h1>
+              <a href="#">Articles</a>
+              <a href="#">FAQs</a>
+              <a href="#">Case Studies</a>
+              <a href="service.html">Law Insights</a>
+            </div>
+            <div class="footer-section">
+              <h1>Support</h1>
+              <a href="contact.html">Contact Us</a>
+              <a href="contact.html">Schedule Consultation</a>
+              <a href="login.html">Client Login</a>
+            </div>
+            <!-- <div class="footer-section newsletter" id="newsletterSection">
+              <h1>Stay Informed</h1>
+              <p>Subscribe to receive updates on legal news, tips, and case results.</p>
+              <form id="subscribeForm">
+                <input type="email" name="email" id="email" placeholder="Enter your email address" required />
+                <button type="submit" class="btn">Subscribe</button>
+              </form>
+              <p id="subscribeMessage" style="margin-top: 10px; color: #c8aa6e;"></p>
+            </div> -->
+          </div>
+
+          <div class="footer-wrap-2">
+            <div class="line"></div>
+            <div class="social-link">
+              <a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fa fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fa fa-youtube"></i></a>
+              <a href="#" class="social-icon"><i class="fa fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="first-box">
+            <a href="../termsOfService.html">Terms of Service</a>
+            <a href="../privacypolicy.html">Privacy Policy</a>
+            <a href="../disclaimer.html">Disclaimer</a>
+          </div>
+          <div class="last-box">
+            <a href="#"
+              >&copy; 2025 Justice & Partners Law Firm. All Rights Reserved.</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/app.js"></script>
+    <script>
+      const currentPath = window.location.pathname.split("/").pop();
+      document
+        .querySelectorAll(".main-navigation .menu-item a")
+        .forEach((link) => {
+          if (
+            link.getAttribute("href") === currentPath ||
+            (currentPath === "" && link.getAttribute("href") === "index.html")
+          ) {
+            link.parentElement.classList.add("current-menu-item");
+          } else {
+            link.parentElement.classList.remove("current-menu-item");
+          }
+        });
+    </script>
+    <script>
+      const { createClient } = supabase;
+      const supabaseUrl = "https://vhypouyzjxeklzcygqyi.supabase.co"; // Replace with your project URL
+      const supabaseKey =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZoeXBvdXl6anhla2x6Y3lncXlpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQyODc0NzEsImV4cCI6MjA2OTg2MzQ3MX0.JjQjb5p6mb6MzHE85pUPwVXA084VM-wTR3Gj8ImkrVA"; // Replace with your anon key
+      const supabaseClient = createClient(supabaseUrl, supabaseKey);
+
+      const form = document.querySelector("form");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        
+        const dataToInsert = {
+          name: formData.get("name"),
+          email: formData.get("email"),
+          phone: formData.get("phone"),
+          taxType: formData.get("taxType"),
+          details: formData.get("details"),
+          deadline: formData.get("deadline")
+        };
+
+        const { data, error } = await supabaseClient
+          .from("taxation_requests")
+          .insert([dataToInsert]);
+
+        if (error) {
+          alert("Error submitting form: " + error.message);
+          console.error(error);
+        } else {
+          alert("Form submitted successfully!");
+          form.reset();
+        }
+      });
+    </script>
+  </body>
+</html>

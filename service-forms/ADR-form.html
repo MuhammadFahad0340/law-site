@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,maximum-scale=1"
+    />
+
+    <title>Arbitration & ADR Services Application | M&H Advocates</title>
+
+    <!-- Fonts and CSS -->
+    <link
+      href="../fonts/font-awesome.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="../fonts/novecento-font/novecento-font.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/@supabase/supabase-js"></script>
+  </head>
+
+  <body>
+    <div id="site-content">
+      <!-- Header -->
+      <header class="site-header">
+        <div class="container">
+          <a href="../index.html" id="branding">
+            <img src="../dummy/logo ok.png" alt="Company Logo" class="logo" />
+            <div class="branding-copy">
+              <h1 class="site-title">M&H Advocates & Corporate Consultants</h1>
+              <small class="site-description"
+                >Delivering expert legal services across diverse sectors</small
+              >
+            </div>
+          </a>
+          <nav class="main-navigation">
+            <button type="button" class="menu-toggle">
+              <i class="fa fa-bars"></i>
+            </button>
+            <ul class="menu">
+              <li class="menu-item"><a href="../index.html">Home</a></li>
+              <li class="menu-item"><a href="../about.html">About Us</a></li>
+              <li class="menu-item">
+                <a href="../experience.html">Experience</a>
+              </li>
+              <li class="menu-item"><a href="../service.html">Service</a></li>
+              <li class="menu-item"><a href="../contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <nav class="mobile-navigation"></nav>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <div class="fullwidth-block content service-form">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <h1 class="entry-title">Arbitration & ADR Services</h1>
+                <p class="lead">
+                  Resolving disputes efficiently through arbitration and
+                  alternative mechanisms
+                </p>
+              </div>
+            </div>
+
+            <!-- Responsibilities -->
+            <div class="row" style="margin-top: 40px">
+              <div class="col-md-12">
+                <h2>Our Key Responsibilities in Arbitration & ADR</h2>
+                <div class="row" style="margin-top: 30px">
+                  <div class="col-md-6">
+                    <div
+                      class="responsibility-item"
+                      style="margin-bottom: 25px"
+                    >
+                      <h4>
+                        <i
+                          class="fa fa-balance-scale"
+                          style="color: #c8aa6e; margin-right: 10px"
+                        ></i
+                        >Commercial Arbitration
+                      </h4>
+                      <p>
+                        Handling disputes arising from business agreements and
+                        contracts.
+                      </p>
+                    </div>
+                    <div
+                      class="responsibility-item"
+                      style="margin-bottom: 25px"
+                    >
+                      <h4>
+                        <i
+                          class="fa fa-group"
+                          style="color: #c8aa6e; margin-right: 10px"
+                        ></i
+                        >Family & Workplace Mediation
+                      </h4>
+                      <p>
+                        Facilitating amicable resolutions in family and
+                        employment-related disputes.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div
+                      class="responsibility-item"
+                      style="margin-bottom: 25px"
+                    >
+                      <h4>
+                        <i
+                          class="fa fa-globe"
+                          style="color: #c8aa6e; margin-right: 10px"
+                        ></i
+                        >International Arbitration
+                      </h4>
+                      <p>
+                        Cross-border arbitration and dispute resolution in
+                        multiple jurisdictions.
+                      </p>
+                    </div>
+                    <div
+                      class="responsibility-item"
+                      style="margin-bottom: 25px"
+                    >
+                      <h4>
+                        <i
+                          class="fa fa-handshake-o"
+                          style="color: #c8aa6e; margin-right: 10px"
+                        ></i
+                        >ADR Consultancy
+                      </h4>
+                      <p>
+                        Providing guidance on the best-suited ADR mechanism for
+                        your matter.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Application Form -->
+            <div class="row" style="margin-top: 50px">
+              <div class="col-md-12">
+                <h2>Arbitration & ADR Application Form</h2>
+                <p>
+                  Please fill out the form to allow us to assess your dispute
+                  resolution needs.
+                </p>
+                <form action="#" method="POST" style="margin-top: 30px">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Full Name *</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="name"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label>Email *</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        name="email"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Phone *</label>
+                      <input
+                        type="tel"
+                        class="form-control"
+                        name="phone"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label>Type of Dispute *</label>
+                      <select class="form-control" name="disputeType" required>
+                        <option value="">Select Type</option>
+                        <option>Commercial</option>
+                        <option>Family</option>
+                        <option>Employment</option>
+                        <option>International</option>
+                        <option>Consumer</option>
+                        <option>Real Estate</option>
+                        <option>Other</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Opposing Party (if any)</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="opposingParty"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label>Is there a written arbitration agreement? *</label>
+                      <select
+                        class="form-control"
+                        name="agreementExist"
+                        required
+                      >
+                        <option value="">Select</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                        <option>Unsure</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Jurisdiction or Governing Law</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="jurisdiction"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label>Preferred Arbitration Institution (if any)</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="arbitrationBody"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label>Brief Summary of the Dispute *</label>
+                      <textarea
+                        class="form-control"
+                        name="summary"
+                        rows="5"
+                        required
+                        placeholder="Explain your dispute, including relevant facts, agreements, or events..."
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label>What outcome are you seeking?</label>
+                      <textarea
+                        class="form-control"
+                        name="desiredOutcome"
+                        rows="4"
+                        placeholder="Describe the resolution you're hoping for..."
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <div class="row" style="margin-top: 20px">
+                    <div class="col-md-12">
+                      <label
+                        ><input type="checkbox" required /> I agree to the
+                        privacy policy and terms of service *</label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row" style="margin-top: 30px">
+                    <div class="col-md-12">
+                      <button
+                        type="submit"
+                        class="btn btn-primary"
+                        style="background-color: #c8aa6e; border-color: #c8aa6e"
+                      >
+                        Submit Application
+                      </button>
+                      <a
+                        href="../index.html"
+                        class="btn btn-secondary"
+                        style="margin-left: 15px"
+                        >Back to Home</a
+                      >
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Contact Info Section -->
+            <div
+              class="row"
+              style="
+                margin-top: 50px;
+                padding: 30px;
+                background-color: #4b3804;
+                border-radius: 5px;
+              "
+            >
+              <div class="col-md-12">
+                <h3>Need Help with Arbitration?</h3>
+                <p style="margin-top: 10px">
+                  Call us:
+                  <a href="tel:+1234567890" style="color: #c8aa6e"
+                    >(123) 456-7890</a
+                  >
+                  | Email:
+                  <a
+                    href="mailto:arbitration@mhadvocates.com"
+                    style="color: #c8aa6e"
+                    >arbitration@mhadvocates.com</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <div class="main-wrap">
+        <!-- Footer content copied exactly as in tax form -->
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/app.js"></script>
+    <script>
+      const currentPath = window.location.pathname.split("/").pop();
+      document
+        .querySelectorAll(".main-navigation .menu-item a")
+        .forEach((link) => {
+          if (
+            link.getAttribute("href") === currentPath ||
+            (currentPath === "" && link.getAttribute("href") === "index.html")
+          ) {
+            link.parentElement.classList.add("current-menu-item");
+          } else {
+            link.parentElement.classList.remove("current-menu-item");
+          }
+        });
+    </script>
+
+    <script>
+      const { createClient } = supabase;
+      const supabaseUrl = "https://vhypouyzjxeklzcygqyi.supabase.co"; // Replace with your project URL
+      const supabaseKey =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZoeXBvdXl6anhla2x6Y3lncXlpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQyODc0NzEsImV4cCI6MjA2OTg2MzQ3MX0.JjQjb5p6mb6MzHE85pUPwVXA084VM-wTR3Gj8ImkrVA"; // Replace with your anon key
+      const supabaseClient = createClient(supabaseUrl, supabaseKey);
+
+      const form = document.querySelector("form");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        const dataToInsert = {
+          name: formData.get("name"),
+          email: formData.get("email"),
+          phone: formData.get("phone"),
+          disputetype: formData.get("disputeType"),
+          opposingparty: formData.get("opposingParty"),
+          agreementexist: formData.get("agreementExist"),
+          jurisdiction: formData.get("jurisdiction"),
+          arbitrationbody: formData.get("arbitrationBody"),
+          summary: formData.get("summary"),
+          desiredoutcome: formData.get("desiredOutcome")
+        };
+
+        const { data, error } = await supabaseClient
+          .from("arbitration_requests")
+          .insert([dataToInsert]);
+
+        if (error) {
+          alert("Error submitting form: " + error.message);
+        } else {
+          alert("Your application has been submitted successfully.");
+          form.reset();
+        }
+      });
+    </script>
+  </body>
+</html>

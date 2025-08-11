@@ -16,6 +16,8 @@
 		<link rel="stylesheet" href="../style.css">
 		<link rel="stylesheet" href="style.css" />
 		
+		<script src="https://unpkg.com/@supabase/supabase-js"></script>
+
 		<!--[if lt IE 9]>
 		<script src="../js/ie-support/html5.js"></script>
 		<script src="../js/ie-support/respond.js"></script>
@@ -436,6 +438,52 @@
 				}
 			});
 		</script> 
+
+		<script>
+  const { createClient } = supabase;
+      const supabaseUrl = "https://vhypouyzjxeklzcygqyi.supabase.co"; // Replace with your project URL
+      const supabaseKey =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZoeXBvdXl6anhla2x6Y3lncXlpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQyODc0NzEsImV4cCI6MjA2OTg2MzQ3MX0.JjQjb5p6mb6MzHE85pUPwVXA084VM-wTR3Gj8ImkrVA"; // Replace with your anon key
+      const supabaseClient = createClient(supabaseUrl, supabaseKey);
+
+      const form = document.querySelector("form");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    const dataToInsert = {
+      firstName: formData.get("firstname"),
+      lastName: formData.get("lastname"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      age: formData.get("age"),
+      maritalStatus: formData.get("maritalstatus"),
+      children: formData.get("children"),
+      estateValue: formData.get("estatevalue"),
+      services: formData.getAll("services[]"),
+      assets: formData.getAll("assets[]"),
+      goals: formData.get("goals"),
+      currentWill: formData.get("currentwill"),
+      urgency: formData.get("urgency"),
+      specialConsiderations: formData.getAll("specialconsiderations[]"),
+      questions: formData.get("questions"),
+    };
+
+    const { data, error } = await supabaseClient
+      .from("estate_planning_requests")
+      .insert([dataToInsert]);
+
+    if (error) {
+      alert("Error submitting form: " + error.message);
+    } else {
+      alert("Application submitted successfully!");
+      form.reset();
+    }
+  });
+</script>
+
 		
 	</body>
 </html>

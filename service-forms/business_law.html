@@ -11,6 +11,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script src="https://unpkg.com/@supabase/supabase-js"></script>
   </head>
   <body>
     <div id="site-content">
@@ -399,33 +400,16 @@
                     <a href="contact.html">Schedule Consultation</a>
                     <a href="login.html">Client Login</a>
                   </div>
-                  <div class="footer-section newsletter" id="newsletterSection">
-                    <h1>Stay Informed</h1>
-                    <p>
-                      Subscribe to receive updates on legal news, tips, and case
-                      results.
-                    </p>
-                    <form id="subscribeForm">
-                      <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        placeholder="Enter your email address"
-                        required
-                      />
-                      <button type="submit" class="btn">Subscribe</button>
-                    </form>
-                    <p
-                      id="subscribeMessage"
-                      style="margin-top: 10px; color: #c8aa6e"
-                    ></p>
-                  </div>
                 </div>
 
                 <div class="footer-wrap-2">
                   <div class="line"></div>
                   <div class="social-link">
-                    								<a href="https://www.facebook.com/mandhadvocates92?mibextid=qi2Omg&rdid=X3zaFRFwao2SwCWc&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1QuDcnANMe%2F%3Fmibextid%3Dqi2Omg#" class="social-icon"><i class="fa fa-facebook"></i></a>
+                    <a
+                      href="https://www.facebook.com/mandhadvocates92?mibextid=qi2Omg&rdid=X3zaFRFwao2SwCWc&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1QuDcnANMe%2F%3Fmibextid%3Dqi2Omg#"
+                      class="social-icon"
+                      ><i class="fa fa-facebook"></i
+                    ></a>
 
                     <a href="#" class="social-icon"
                       ><i class="fa fa-twitter"></i
@@ -494,6 +478,50 @@
           input.value = "";
         }
       }
+    </script>
+
+    <script>
+      const { createClient } = supabase;
+      const supabaseUrl = "https://vhypouyzjxeklzcygqyi.supabase.co"; // Replace with your project URL
+      const supabaseKey =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZoeXBvdXl6anhla2x6Y3lncXlpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQyODc0NzEsImV4cCI6MjA2OTg2MzQ3MX0.JjQjb5p6mb6MzHE85pUPwVXA084VM-wTR3Gj8ImkrVA"; // Replace with your anon key
+      const supabaseClient = createClient(supabaseUrl, supabaseKey);
+
+      const form = document.querySelector("form");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+
+        let businessType = formData.get("businessType");
+        if (businessType === "Other") {
+          businessType = formData.get("customBusinessType");
+        }
+
+        const dataToInsert = {
+          first_name: formData.get("firstName"),
+          last_name: formData.get("lastName"),
+          email: formData.get("email"),
+          phone: formData.get("phone"),
+          business_name: formData.get("businessName"),
+          business_type: businessType,
+          services_needed: formData.getAll("servicesNeeded[]"),
+          case_details: formData.get("caseDetails")
+        };
+
+        const { data, error } = await supabaseClient
+          .from("business_law_requests")
+          .insert([dataToInsert]);
+
+        if (error) {
+          alert("Error submitting form: " + error.message);
+        } else {
+          alert("Application submitted successfully!");
+          form.reset();
+          document.getElementById("customBusinessTypeWrapper").style.display =
+            "none";
+        }
+      });
     </script>
   </body>
 </html>
