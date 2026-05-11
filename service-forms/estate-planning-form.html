@@ -29,8 +29,9 @@
 		
 		<div id="site-content">
 			
+			
 			<header class="site-header">
-				<div class="container">
+				<div class="container header-container">
 					<a href="../index.html" id="branding">
 						<img src="../dummy/logo ok.png" alt="Company Name" class="logo">
 						<div class="branding-copy">
@@ -49,9 +50,15 @@
 							<li class="menu-item"><a href="../contact.html">Contact</a></li>
 						</ul>
 					</nav>
-					<nav class="mobile-navigation"></nav>
+
+					<div class="auth-buttons">
+						<a href="../login.html" class="btn login-btn">Login</a>
+						<a href="../signup.html" class="btn signup-btn">Sign Up</a>
+					</div>
 				</div>
-			</header> <!-- .site-header -->
+				<nav class="mobile-navigation"></nav>
+			</header>
+ <!-- .site-header -->
 
 			<main class="main-content">
 				<div class="fullwidth-block content service-form">
@@ -111,7 +118,7 @@
 								<h2>Estate Planning Application Form</h2>
 								<p>Please fill out this form to help us understand your estate planning needs and provide you with comprehensive legal guidance.</p>
 								
-								<form action="#" method="POST" style="margin-top: 30px;">
+								<form method="POST" data-service-type="estate-planning" style="margin-top: 30px;">
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group" style="margin-bottom: 20px;">
@@ -485,5 +492,6 @@
 </script>
 
 		
+			<script src="../js/navbar.js"></script>
 	</body>
 </html>

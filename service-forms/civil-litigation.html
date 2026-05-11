@@ -28,34 +28,36 @@
   <body>
     <div id="site-content">
       <!-- Header -->
-      <header class="site-header">
-        <div class="container">
-          <a href="../index.html" id="branding">
-            <img src="../dummy/logo ok.png" alt="Company Logo" class="logo" />
-            <div class="branding-copy">
-              <h1 class="site-title">M&H Advocates & Corporate Consultants</h1>
-              <small class="site-description"
-                >Delivering expert legal services across diverse sectors</small
-              >
-            </div>
-          </a>
-          <nav class="main-navigation">
-            <button type="button" class="menu-toggle">
-              <i class="fa fa-bars"></i>
-            </button>
-            <ul class="menu">
-              <li class="menu-item"><a href="../index.html">Home</a></li>
-              <li class="menu-item"><a href="../about.html">About Us</a></li>
-              <li class="menu-item">
-                <a href="../experience.html">Experience</a>
-              </li>
-              <li class="menu-item"><a href="../service.html">Service</a></li>
-              <li class="menu-item"><a href="../contact.html">Contact</a></li>
-            </ul>
-          </nav>
-          <nav class="mobile-navigation"></nav>
-        </div>
-      </header>
+      
+			<header class="site-header">
+				<div class="container header-container">
+					<a href="../index.html" id="branding">
+						<img src="../dummy/logo ok.png" alt="Company Name" class="logo">
+						<div class="branding-copy">
+							<h1 class="site-title">M&H Advocates & Corporate Consultants</h1>
+							<small class="site-description">Delivering expert legal services across diverse sectors</small>
+						</div>
+					</a>
+
+					<nav class="main-navigation">
+						<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+						<ul class="menu">
+							<li class="menu-item"><a href="../index.html">Home</a></li>
+							<li class="menu-item"><a href="../about.html">About Us</a></li>
+							<li class="menu-item"><a href="../experience.html">Experience</a></li>
+							<li class="menu-item"><a href="../service.html">Service</a></li>
+							<li class="menu-item"><a href="../contact.html">Contact</a></li>
+						</ul>
+					</nav>
+
+					<div class="auth-buttons">
+						<a href="../login.html" class="btn login-btn">Login</a>
+						<a href="../signup.html" class="btn signup-btn">Sign Up</a>
+					</div>
+				</div>
+				<nav class="mobile-navigation"></nav>
+			</header>
+
 
       <main class="main-content">
         <div class="fullwidth-block content service-form">
@@ -422,5 +424,6 @@
         }
       });
     </script>
-  </body>
+  		<script src="../js/navbar.js"></script>
+	</body>
 </html>

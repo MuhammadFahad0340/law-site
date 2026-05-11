@@ -1,6 +1,36 @@
 {
+  "name": "mh-advocates-website",
+  "version": "1.0.0",
+  "description": "M&H Advocates & Corporate Consultants - Law Firm Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -l 8000",
+    "dev": "npx serve . -l 8000",
+    "build": "echo 'No build process required for static site'",
+    "test": "echo 'No tests specified'",
+    "lint": "echo 'No linting configured'",
+    "serve": "npx serve . -l 8000"
+  },
+  "keywords": [
+    "law-firm",
+    "legal-services",
+    "attorneys",
+    "lawyers",
+    "legal-consultation"
+  ],
+  "author": "M&H Advocates & Corporate Consultants",
+  "license": "MIT",
   "dependencies": {
     "@supabase/supabase-js": "^2.53.1",
     "nodemailer": "^7.0.5"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/mh-advocates-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/mh-advocates-website/issues"
+  },
+  "homepage": "https://your-username.github.io/mh-advocates-website"
 }
